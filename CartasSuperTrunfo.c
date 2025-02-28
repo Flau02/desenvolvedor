@@ -2,8 +2,9 @@
 
 int main() {
 
-    char codigo_1[3], estado_1[20], cidade_1[25]; // Declaração de variáveis carta 1
-    char codigo_2[3], estado_2[20], cidade_2[25]; // Declaração de variáveis carta 2
+    short codigo_1[3], codigo_2[3];
+    char estado_1[20], cidade_1[25]; // Declaração de variáveis carta 1
+    char estado_2[20], cidade_2[25]; // Declaração de variáveis carta 2
     unsigned long int populacao_1, populacao_2; 
     int turisticos_1, turisticos_2;
     float pib_1, area_1; 
@@ -26,13 +27,13 @@ int main() {
     //Entradas para cadastro das informações da carta 1
     
     printf("Digite o código da cidade da carta 1: "); 
-    scanf("%s",codigo_1);
+    scanf(" %3s", codigo_1);
 
     printf("Digite o nome do estado da carta 1: ");
-    scanf(" %20[^\n]",estado_1);
+    scanf(" %20[^\n]", estado_1);
 
     printf("Digite o nome da cidade da carta 1: ");
-    scanf(" %25[^\n]",cidade_1);
+    scanf(" %25[^\n]", cidade_1);
     
     printf("Digite a população da carta 1: ");
     scanf("%d", &populacao_1);
@@ -48,15 +49,20 @@ int main() {
    
     printf("\n");
 
-    pib_percapta_1 = pib_1 / populacao_1;
-    densidade_1 = populacao_1 / area_1;
-
-    
+    pib_percapta_1 = (float) pib_1 / populacao_1;
+    densidade_1 = (float) populacao_1 / area_1;
 
     //Imprime as informações cadastradas da carta 1
-    
-    printf(" Código da carta 1: %s \n Estado 1: %s \n Cidade 1: %s \n População 1: %d milhões \n PIB 1: %.2f bilhões \n Área 1: %.3f km quadrados \n Pontos turísticos 1: %d \n ",codigo_1,estado_1,cidade_1,populacao_1,pib_1,area_1,turisticos_1);
-    printf("Pib percapta é %f e densidade é %f \n", pib_percapta_1, densidade_1);
+
+    printf("Código da carta: %s\n", codigo_1);
+    printf("Estado: %s\n", estado_1);
+    printf("Cidade: %s\n", cidade_1);
+    printf("População: %d\n", populacao_1);
+    printf("PIB: %.2f\n", pib_1);
+    printf("Área: %.3f\n", area_1);
+    printf("Pontos turísticos: %d\n", turisticos_1);
+    printf("Densidade popilacional: %.3f\n", densidade_1);
+    printf("PIB percapta: %.3f\n", pib_percapta_1);
 
     //Entradas para cadastro das informações da carta 2
 
@@ -83,18 +89,21 @@ int main() {
    
     printf("\n");
 
+    pib_percapta_2 = (float) pib_2 / populacao_2;
+    densidade_2 = (float) populacao_2 / area_2;
+
     //Imprime as informações cadastradas da carta 2
+
+    printf("Código da carta: %s\n", codigo_2);
+    printf("Estado: %s\n", estado_2);
+    printf("Cidade: %s\n", cidade_2);
+    printf("População: %d\n", populacao_2);
+    printf("PIB: %.2f\n", pib_2);
+    printf("Área: %.3f\n", area_2);
+    printf("Pontos turísticos: %d\n", turisticos_2);
+    printf("Densidade popilacional: %.3f\n", densidade_2);
+    printf("PIB percapta: %.3f\n", pib_percapta_2);
     
-    printf(" Código da carta 2: %s \n Estado 2: %s \n Cidade 2: %s \n População 2: %d milhões \n PIB 2: %.2f bilhões \n Área 2: %.3f km quadrados \n Pontos turísticos 2: %d \n ",codigo_2,estado_2,cidade_2,populacao_2,pib_2,area_2,turisticos_2);
-
-
-
-
-
-
-
-
-
 
     return 0;
 }
